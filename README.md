@@ -1,2 +1,3 @@
-# startups-content
-Workshop and getting started content for organizations using GitHub for Startups
+# Pets workshop
+
+This repository contains the project for both a guided workshop and the Modern DevOps with GitHub What The Hack. The project is a Next.js app that uses MongoDB for the database. The design is to be used as a walk-through of GitHub features, including [Codespaces](https://docs.github.com/en/codespaces/overview), [Actions](https://docs.github.com/en/actions/learn-github-actions) and [GitHub Advanced Security (GHAS)](https://docs.github.com/en/github/getting-started-with-github/about-github-advanced-security). You'll explore how to use these features to implement and improve your organization's DevOps processes.
