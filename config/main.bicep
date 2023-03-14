@@ -117,8 +117,8 @@ resource containerApp 'Microsoft.App/containerApps@2022-03-01' = {
       }
       registries: [
         {
-          server: containerRegistry.name
-          username: containerRegistry.properties.loginServer
+          server: containerRegistry.properties.loginServer
+          username: containerRegistry.listCredentials().username
           passwordSecretRef: 'container-registry-password'
         }
       ]
