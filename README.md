@@ -2,9 +2,9 @@
 
 This repository contains the project for both a guided workshop and the Modern DevOps with GitHub What The Hack. The project is a Next.js app that uses MongoDB for the database. The design is to be used as a walk-through of GitHub features, including [Codespaces](https://docs.github.com/en/codespaces/overview), [Actions](https://docs.github.com/en/actions/learn-github-actions) and [GitHub Advanced Security (GHAS)](https://docs.github.com/en/github/getting-started-with-github/about-github-advanced-security). You'll explore how to use these features to implement and improve your organization's DevOps processes.
 
-## Requirements
+## Getting started
 
-This project uses Node.js for the application and MongoDB for the database. You can [install locally MongoDB](https://www.mongodb.com/docs/manual/administration/install-community/) or use a cloud based provider of your choosing.
+**[Get started learning about development and DevOps with GitHub!](./content/README.md)**
 
 ## License 
 

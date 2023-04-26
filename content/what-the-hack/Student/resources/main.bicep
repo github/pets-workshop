@@ -106,7 +106,7 @@ resource containerApp 'Microsoft.App/containerApps@2022-03-01' = {
     configuration: {
       ingress: {
         external: true
-        targetPort: 3000
+        targetPort: 80
         allowInsecure: false
         traffic: [
           {
@@ -117,8 +117,8 @@ resource containerApp 'Microsoft.App/containerApps@2022-03-01' = {
       }
       registries: [
         {
-          server: containerRegistry.properties.loginServer
-          username: containerRegistry.listCredentials().username
+          server: containerRegistry.name
+          username: containerRegistry.properties.loginServer
           passwordSecretRef: 'container-registry-password'
         }
       ]
