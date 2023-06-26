@@ -65,3 +65,9 @@ You have now enabled code scanning for your repository!
 ## Summary and next steps
 
 Throughout the course of these exercises you enabled GitHub Advanced Security. You enabled Dependabot to check the libraries your project takes dependencies on, secret scanning to look for keys and tokens, and code scanning to examine your source code. These tools help ensure your application is secure. Next it's time to [file an issue](2-issues.md) to add feature requests.
+
+### Additional resources
+
+- [About GitHub Advanced Security](https://docs.github.com/en/get-started/learning-about-github/about-github-advanced-security)
+- [GitHub skills - Secure your repository's supply chain](https://github.com/skills/secure-repository-supply-chain)
+- [GitHub skills - Secure code game](https://github.com/skills/secure-code-game)
