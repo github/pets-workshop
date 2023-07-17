@@ -1,7 +1,5 @@
 # How GitHub uses GitHub
 
-[Deck](https://docs.google.com/presentation/d/1EF6INHF1CyydiPAPJnByolIWVidoTSOafzqNBg8c_sc/edit?usp=sharing)
-
 GitHub is built on GitHub. We use our own tools to create new tools, features and products. This has driven us to take a developer-first approach to everything we do, to ensure our products aid productivity and the development lifecycle.
 
 As your organization is getting started with GitHub, and potentially DevOps, it's best to start with a good foundation. It's best to adapt and modify for your organization's specific needs once you have established a base. While some of this might be review, the goal is to provide insights into how to manage your processes and practices by exploring how we at GitHub use GitHub.
