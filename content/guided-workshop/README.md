@@ -2,7 +2,7 @@
 
 This workshop is built to help guide you through some of the most common DevOps tasks on GitHub. You'll explore:
 
-- Managing projects with [GitHub Issues]
+- Managing projects with [GitHub Issues](https://github.com/features/issues)
 - Creating a development environment with [GitHub Codespaces](https://github.com/features/codespaces)
 - Using [GitHub Copilot](https://github.com/features/copilot) as your AI pair programmer
 - Securing the development pipeline with [GitHub Advanced Security](https://github.com/features/security)
