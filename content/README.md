@@ -1,8 +1,14 @@
 # Exploring modern DevOps
 
-This repository is built as a resource for developers and other DevOps professionals to build core skills on creating and deploying software with GitHub. The repository contains an application written using [Next.js](https://nextjs.org/) with a [MongoDB](https://www.mongodb.com/) backend, and the beginnings of end-to-end testing with [Cypress](https://www.cypress.io/).
+This repository is built as a resource for developers and other DevOps professionals to build core skills on creating and deploying software on and with GitHub. It contains information about DevOps and GitHub to help get you started on your journey.
 
-## Formats
+In addition, the repository contains an application written using [Next.js](https://nextjs.org/) with a [MongoDB](https://www.mongodb.com/) backend, and the beginnings of end-to-end testing with [Cypress](https://www.cypress.io/). You can use this repository as a template for creating your own projects, or walk through the available workshop and resources.
+
+## Getting started with DevOps and GitHub
+
+[GitHub is built on GitHub](./guided-workshop/resources/how-github-uses-github.md). We use [GitHub Actions](https://github.com/features/actions) for [automation](./guided-workshop/resources/automation.md). We use [GitHub Advanced Security](https://github.com/features/security) to secure the development pipeline. We use [GitHub Codespaces](https://github.com/features/codespaces) to [write code](./guided-workshop/exercises/3-codespaces.md). And we use [GitHub Copilot](https://github.com/features/copilot) as an AI pair programmer. You can learn more about how we use [GitHub](./guided-workshop/resources/how-github-uses-github.md) to create GitHub and manage our DevOps processes, and begin exploring the features available. You can also gain hands-on experience by completing the workshops highlighted below.
+
+## Workshop formats
 
 ### Challenge-based
 
