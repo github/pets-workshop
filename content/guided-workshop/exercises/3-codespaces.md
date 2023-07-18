@@ -4,7 +4,7 @@ One of the biggest challenges organizations face is onboarding new developers to
 
 GitHub Codespaces allows you to develop using the cloud-based container and Visual Studio Code in your browser window, meaning no local installation is required; you can do development with a tablet and a keyboard! You can also connect your local instance of [Visual Studio Code](https://docs.github.com/en/codespaces/developing-in-codespaces/using-github-codespaces-in-visual-studio-code) or [JetBrains IDE](https://docs.github.com/en/codespaces/developing-in-codespaces/using-github-codespaces-in-your-jetbrains-ide)
 
-Let's explore how to create and configure a codespace for your project, and see how you can develop in your browser.
+Let's explore how to create and configure a codespaces for your project, and see how you can develop in your browser.
 
 ## Using the default container
 
