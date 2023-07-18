@@ -1,8 +1,8 @@
 # Exploring modern DevOps
 
-This repository is built as a resource for developers and other DevOps professionals to build core skills on creating and deploying software on and with GitHub. It contains information about DevOps and GitHub to help get you started on your journey.
+This repository is built as a resource to begin exploring GitHub and DevOps. Working through either a [guided workshop](./guided-workshop/) or a [challenge-based approach](./what-the-hack/Student/), you will learn the core concepts of DevOps and features available on GitHub to support you.
 
-In addition, the repository contains an application written using [Next.js](https://nextjs.org/) with a [MongoDB](https://www.mongodb.com/) backend, and the beginnings of end-to-end testing with [Cypress](https://www.cypress.io/). You can use this repository as a template for creating your own projects, or walk through the available workshop and resources.
+The workshop is centered around an application (included in this repository) written using [Next.js](https://nextjs.org/) with a [MongoDB](https://www.mongodb.com/) backend, and the beginnings of end-to-end testing with [Cypress](https://www.cypress.io/). You can use this repository as a template for creating your own projects, or walk through the available workshop and resources.
 
 ## Getting started with DevOps and GitHub
 
@@ -16,7 +16,7 @@ Many learners find the best results if they explore technology by performing the
 
 > **[Begin the challenge-based workshop!](./what-the-hack/README.md)**
 
-### Step-by-step
+### Step-by-step guided workshop
 
 If you prefer a more guided experience, you can work through the [step-by-step workshop](./guided-workshop/). The workshop contains step-by-step instructions to complete the tasks and supporting information to learn more about the technology.
 
