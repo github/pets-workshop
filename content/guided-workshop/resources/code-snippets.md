@@ -24,7 +24,7 @@ jobs:
           start: npm run start
           project: ./source
         env:
-          MONGODB_URI: 'test'
+          MONGODB_URI: test
 ```
 
 ## Custom action
