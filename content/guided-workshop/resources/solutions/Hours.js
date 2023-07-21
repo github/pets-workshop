@@ -20,9 +20,9 @@ const Hours = () => {
     // get today's hours
     const todayHours = shelterHours.find(day => day.day === today);
 
-    // display todays hours
+    // display todays in a div container with an id of hours
     return (
-        <div>
+        <div id="hours">
             <h2>Today's Hours</h2>
             <p>{todayHours.day}: {todayHours.open} to {todayHours.close}</p>
         </div>
