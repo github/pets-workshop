@@ -12,9 +12,13 @@ At their core, issues document some form of an action. They can be a request for
 4. Further discuss and review the pull request.
 5. Once everyone is satisfied and has signed off, merge the pull request and close the issue.
 
+## Scenario
+
+The shelter wants to begin pushing new features to the website. They want to start by displaying the hours for the current day on the landing page. There's also a need to make updates to help support development and DevOps for both current and future updates. You want to track these updates to document the work being done. You'll do this by creating issues in the repository.
+
 ## Creating issues to manage feature requests
 
-Our project needs two main updates. We want to define a [codespace](https://github.com/features/codespaces) to enable cloud-based development for our project, and add a new component to the website to display the shelter's hours. Let's create the issues for each of these. In the next few exercises we'll begin making the appropriate updates to our project to resolve these requests.
+Our project needs two main updates. We want to make the updates to support development for our project, and add a new component to the website to display the shelter's hours. Let's create the issues for each of these. In the next few exercises we'll begin making the appropriate updates to our project to resolve these requests.
 
 1. Return to the repository you created at the beginning of this workshop.
 2. Select the **Issues** tab.
@@ -24,10 +28,10 @@ Our project needs two main updates. We want to define a [codespace](https://gith
     | Title                          | Description                                                                    |
     | ------------------------------ | ------------------------------------------------------------------------------ |
     | Define codespace               | Create the necessary definitions for the codespace to enable cloud development |
-    | Add component to display hours | Create a new component for the project to display the shelter's hours          |
     | Implement testing              | Create a workflow to automate testing for continuous integration               |
+    | Add component to display hours | Create a new component for the project to display the shelter's hours          |
     | Create deployment environment  | Create a workflow to create deployment environment                             |
-    | Implement automated deployment | Create a workflow to automate deployment for continuous delivery |
+    | Implement automated deployment | Create a workflow to automate deployment for continuous delivery               |
 
 You've now defined all the issues for the workshop! You'll use these issues to help guide your progress through the workshop.
 

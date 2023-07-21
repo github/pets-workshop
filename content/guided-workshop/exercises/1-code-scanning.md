@@ -10,6 +10,10 @@ To help support developers and security teams, [GitHub Advanced Security](https:
 
 Let's explore each of these, and enable them on our repository. We'll see them in action when we create a pull request with new code later in the workshop.
 
+## Scenario
+
+Security is important in every application. By detecting potential vulnerabilities early, teams are able to make updates before infiltrations occur. To help secure the website, the shelter wants to update the repository to ensure insecure code and libraries are detected as early as possible. You'll enable Dependabot, secret scanning, and code scanning to meet these needs.
+
 ## Dependabot
 
 Most projects take dependencies on open source and other external libraries. While modern development would seemingly be impossible without these resources, we always need to ensure the dependencies we take are secure. [Dependabot](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide) will look at the dependencies your repository has and raise alerts or even create [pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) to update your dependencies to a secure version.
