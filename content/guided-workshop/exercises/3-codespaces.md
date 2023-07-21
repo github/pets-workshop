@@ -51,6 +51,8 @@ You've now defined a custom container! Whenever someone uses the codespace you d
 
 ## Interacting with the repository
 
+<!-- TODO: Update this to just push to main -->
+
 Custom containers for GitHub Codespaces become part of the source code for the repository. Thus they are maintained through standard source control, and will follow the repository as it's forked in the future. This allows this definition to be shared across all developers contributing to the project.
 
 Let's create a new branch with our code, create a pull request, mark it as completing the related issue, then merge it in. You'll use command-line tools in the codespace to complete this process.
