@@ -6,7 +6,7 @@ GitHub Copilot is a generative AI service trained on billions of lines of public
 
 ## Scenario
 
-The shelter wants to add their hours to the webpage for the current day so people know when they can stop by to visit on that day. As this is something which could appear on multiple pages, it's best to create this as a [component](https://nextjs.org/learn/foundations/from-javascript-to-react/building-ui-with-components). For the time being, the component will be displayed solely on the homepage.
+The shelter wants to add their hours to the webpage for the current day so people know when they can stop by to visit on that day. As this is something which could appear on multiple pages, it's best to create this as a [component](https://nextjs.org/learn/foundations/from-javascript-to-react/building-ui-with-components). For the time being, the component will be displayed solely on the homepage. To support the test, the output will be displayed in a `div` element with an id of `hours`.
 
 > **IMPORTANT:** You do not need to have experience with Next.js to complete this exercise. A [solution file](../resources/solutions/Hours.js) is provided for you to use as a model or to simply copy.
 
@@ -134,15 +134,15 @@ Let's see how GitHub Copilot can help us quickly create the component.
 1. Finally, ask GitHub Copilot to display today's hours:
 
     ```javascript
-    //display todays hours
+    // display todays hours in a div container with an id of hours
     ```
 
 1. GitHub Copilot will likely suggest the following code line-by-line, which you can accept by pressing <kbd>Tab</kbd>:
 
     ```jsx
     return (
-        <div>
-            <h1>Today's Hours</h1>
+        <div id="hours">
+            <h2>Today's Hours</h2>
             <p>{todayHours.day}: {todayHours.open} to {todayHours.close}</p>
         </div>
     );
