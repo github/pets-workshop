@@ -34,6 +34,6 @@ Ready to get started? Let's go! The workshop scenario imagines you as a develope
 3. [Create a codespace](exercises/3-codespaces.md) to start writing code
 4. [Implement testing](exercises/4-testing.md) to supplement continuous integration
 5. [Add a new feature](exercises/5-coding.md) to implement the feature
-6. [Create a pull request](exercises/6-pull-request.md) to begin a code review
+6. [Use the GitHub flow](exercises/6-github-flow.md) to incorporate changes
 7. [Add automation](exercises/7-automation.md) to create a deployment environment
 8. [Deploy your project](exercises/8-deployment.md) to publish your project to the cloud

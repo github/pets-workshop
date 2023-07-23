@@ -170,3 +170,13 @@ Let's finish out our coding by displaying the `Hours` component to **index.js**,
     ```jsx
     <Hours />
     ```
+
+Congratulations! You've now created a new component and added the code to the landing page to display it.
+
+## Summary and next steps
+
+All developers write code with some form of assistance. This might come from a human pair programmer, copying/pasting code from a developer forum or documentation, or, in our case, and AI pair programer - GitHub Copilot. With GitHub Copilot, developers are able to focus on the bigger tasks while GitHub Copilot provides suggestions and generates code.
+
+With the code added, it's time to use the GitHub flow to [incorporate your changes into the code base](./6-github-flow.md).
+
+## Resources
