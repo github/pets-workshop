@@ -22,7 +22,7 @@ jobs:
         with:
           build: npm run build
           start: npm run start
-          project: ./source
+          project: ./src
         env:
           MONGODB_URI: test
 ```
