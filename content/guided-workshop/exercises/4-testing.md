@@ -70,7 +70,7 @@ Let's create a workflow to implement testing.
                     with:
                         build: npm run build
                         start: npm run start
-                        project: ./source
+                        project: ./src
                     env:
                         MONGODB_URI: test
     ```
