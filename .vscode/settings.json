@@ -2,6 +2,8 @@
     "cSpell.words": [
         "codespace",
         "Codespaces",
-        "devcontainer"
+        "devcontainer",
+        "devcontainers",
+        "prebuild"
     ]
 }
