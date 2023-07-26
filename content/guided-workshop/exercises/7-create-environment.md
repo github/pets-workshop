@@ -210,6 +210,6 @@ You've prepped everything on both Azure and your repository, and created the wor
 
 ## Summary and next steps
 
-Congratulations! You have new defined a workflow which uses infrastructure as code (IaC) to create the resources necessary for deployment. This allows you to quickly create a consistent environment, reducing overhead and errors. Let's close everything out by [implementing continuous deployment](8-continuous-deployment.md).
+Congratulations! You have new defined a workflow which uses infrastructure as code (IaC) to create the resources necessary for deployment. This allows you to quickly create a consistent environment, reducing overhead and errors. Let's close everything out by [implementing continuous deployment](8-deployment.md).
 
 ## Resources
