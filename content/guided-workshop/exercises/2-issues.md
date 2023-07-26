@@ -7,10 +7,10 @@ GitHub provides various features to enable collaboration and project management,
 At their core, issues document some form of an action. They can be a request for a feature, a bug report, or another operation taken by the team. There's no prescribed methodology for using GitHub Issues, allowing your team to determine the best way to manage and drive your projects. A common flow teams will implement on issues is:
 
 1. File an issue to request a new feature or file a bug report.
-2. Discuss the issue, and determine the correct people and mechanism to resolve the request.
-3. Create a pull request with a proposed implementation of the request.
-4. Further discuss and review the pull request.
-5. Once everyone is satisfied and has signed off, merge the pull request and close the issue.
+1. Discuss the issue, and determine the correct people and mechanism to resolve the request.
+1. Create a pull request with a proposed implementation of the request.
+1. Further discuss and review the pull request.
+1. Once everyone is satisfied and has signed off, merge the pull request and close the issue.
 
 ## Scenario
 
@@ -21,9 +21,9 @@ The shelter wants to begin pushing new features to the website. They want to sta
 Our project needs two main updates. We want to make the updates to support development for our project, and add a new component to the website to display the shelter's hours. Let's create the issues for each of these. In the next few exercises we'll begin making the appropriate updates to our project to resolve these requests.
 
 1. Return to the repository you created at the beginning of this workshop.
-2. Select the **Issues** tab.
-3. Select **New issue**.
-4. Create new issues by adding the information indicated in the table below, selecting **Submit new issue** after creating each one (and using **New issue** to create a new one):
+1. Select the **Issues** tab.
+1. Select **New issue**.
+1. Create new issues by adding the information indicated in the table below, selecting **Submit new issue** after creating each one (and using **New issue** to create a new one):
 
     | Title                          | Description                                                                    |
     | ------------------------------ | ------------------------------------------------------------------------------ |
@@ -33,8 +33,16 @@ Our project needs two main updates. We want to make the updates to support devel
     | Create deployment environment  | Create a workflow to create deployment environment                             |
     | Implement automated deployment | Create a workflow to automate deployment for continuous delivery               |
 
+    > **TIP:** You can also save an issue by pressing <kbd>Ctl</kbd> - <kbd>Enter</kbd> (or <kbd>Cmd</kbd> - <kbd>Return</kbd> on a Mac) in the title or description fields.
+
 You've now defined all the issues for the workshop! You'll use these issues to help guide your progress through the workshop.
 
 ## Summary and next steps
 
 GitHub Issues are the core to project management on GitHub. Their flexibility allows your organization to determine the best course of action to support your development lifecycle's methodology. With your issues created, it's time to turn your attention to the first big change to the project, [defining a codespace](3-codespaces.md).
+
+## Resources
+
+- [GitHub Issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues)
+- [Communicate using markdown](https://github.com/skills/communicate-using-markdown)
+- [GitHub Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/quickstart-for-projects)
