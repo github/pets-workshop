@@ -79,5 +79,5 @@ In this exercise, you enabled GitHub Advanced Security. You enabled Dependabot t
 ### Additional resources
 
 - [About GitHub Advanced Security](https://docs.github.com/en/get-started/learning-about-github/about-github-advanced-security)
-- [GitHub skills - Secure your repository's supply chain](https://github.com/skills/secure-repository-supply-chain)
-- [GitHub skills - Secure code game](https://github.com/skills/secure-code-game)
+- [GitHub Skills: Secure your repository's supply chain](https://github.com/skills/secure-repository-supply-chain)
+- [GitHub Skills: Secure code game](https://github.com/skills/secure-code-game)

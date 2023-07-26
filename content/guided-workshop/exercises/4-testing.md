@@ -53,26 +53,24 @@ Let's create a workflow to implement testing.
     ```yml
     name: End-to-end tests
     on:
-        push:
-            branches: ["main"]
-        pull_request:
-            branches: ["main"]
+      push:
+        branches: ["main"]
+      pull_request:
+        branches: ["main"]
     jobs:
-        cypress-run:
-            runs-on: ubuntu-20.04
-            steps:
-                - name: Checkout
-                    uses: actions/checkout@v3
-                # Install NPM dependencies, cache them correctly
-                # and run all Cypress tests
-                - name: Cypress run
-                    uses: cypress-io/github-action@v5
-                    with:
-                        build: npm run build
-                        start: npm run start
-                        project: ./src
-                    env:
-                        MONGODB_URI: test
+      cypress-run:
+        runs-on: ubuntu-20.04
+        steps:
+          - name: Checkout
+            uses: actions/checkout@v3
+          - name: Cypress run
+            uses: cypress-io/github-action@v5
+            with:
+              build: npm run build
+              start: npm run start
+              project: ./src
+            env:
+              MONGODB_URI: test
     ```
 
     > **IMPORTANT:** YML is sensitive to tab/space levels. Ensure the tabbing is as displayed above.
@@ -102,27 +100,29 @@ Next is [Cypress](https://github.com/marketplace/actions/cypress-io), which will
 
 With the workflow created, let's push it to the repository. Typically you would create a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) for any new code (which this is). To streamline the process, we're going to push straight to main as we'll be exploring pull requests and the [GitHub flow](https://docs.github.com/en/get-started/quickstart/github-flow) in a later exercise. You'll start by obtaining the number of the [issue you created earlier](./2-issues.md), creating a commit for the new code, then pushing it to main.
 
-1. Open a terminal window in your codespace by pressing <kbd>Ctl</kbd> + <kbd>`</kbd>.
-1. List all issues for the repository by entering the following command in the terminal window and pressing <kbd>Enter</kbd> (or <kbd>Return</kbd> on a Mac):
+> **NOTE:** All commands are entered using the terminal window in the codespace.
+
+1. Use the open terminal window in your codespace, or open it (if necessary) by pressing <kbd>Ctl</kbd> + <kbd>`</kbd>.
+1. List all issues for the repository by entering the following command in the terminal window:
 
     ```bash
     gh issue list
     ```
 
 1. Note the issue number for the one titled **Implement testing**.
-1. Stage all files by entering the following command in the terminal window and pressing <kbd>Enter</kbd> (or <kbd>Return</kbd> on a Mac):
+1. Stage all files by entering the following command in the terminal window:
 
     ```bash
     git add .
     ```
 
-1. Commit all changes with a message by entering the following command in the terminal window and pressing <kbd>Enter</kbd> (or <kbd>Return</kbd> on a Mac), replacing **<ISSUE_NUMBER>** with the number for the **Implement testing** issue:
+1. Commit all changes with a message by entering the following command in the terminal window, replacing **<ISSUE_NUMBER>** with the number for the **Implement testing** issue:
 
     ```bash
     git commit -m "Resolves #<ISSUE_NUMBER>"
     ```
 
-1. Push all changes to the repository by entering the following command in the terminal window and pressing <kbd>Enter</kbd> (or <kbd>Return</kbd> on a Mac):
+1. Push all changes to the repository by entering the following command in the terminal window:
 
     ```bash
     git push
@@ -138,13 +138,24 @@ Pushing the workflow definition to the repository counts as a push to `main`, me
 
 1. Return to your repository.
 1. Select the **Actions** tab.
-1. Select the name of the action on the left side.
-1. Note the test running (and eventually failing). You can click the name of the action to see the individual steps, and the logs provided by those steps.
+1. Select **End-to-end tests** on the left side.
+1. Note the tests running on the right side with a message of **Resolves <ISSUE_NUMBER>**, matching the commit message you used (and eventually failing).
+
+    ![Screenshot of the workflow running](./images/4-workflow-run.png)
+
+1. When the test fails, select the name of the run (which should be similar to **Resolves <ISSUE_NUMBER>**). You will see the results of the test, which will be similar to the screenshot below:
+
+    ![Screenshot of results](./images/4-workflow-run.png)
+
+You've now seen a workflow, and explore the details of a run!
 
 ## Summary and next steps
 
-Implementing continuous integration and continuous deployment is critical to successful DevOps. Automating these processes ensures consistency and reduces the workload required for developers and administrators. You have created a workflow to run tests on any new code for your codebase.
-
-Let's turn our attention to [adding code to our project](./5-coding.md).
+Congratulations! You've implemented automated testing, a standard part of continuous integration, which is critical to successful DevOps. Automating these processes ensures consistency and reduces the workload required for developers and administrators. You have created a workflow to run tests on any new code for your codebase. Let's turn our attention to [adding code to our project](./5-coding.md).
 
 ### Resources
+
+- [GitHub Actions](https://github.com/features/actions)
+- [GitHub Actions Marketplace](https://github.com/marketplace?type=actions)
+- [About continuous integration](https://docs.github.com/en/actions/automating-builds-and-tests/about-continuous-integration)
+- [GitHub Skills: Test with Actions](https://github.com/skills/test-with-actions)

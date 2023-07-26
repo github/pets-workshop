@@ -104,4 +104,4 @@ Congratulations! You have now defined a custom development environment including
 - [GitHub Codespaces](https://github.com/features/codespaces)
 - [Getting started with GitHub Codespaces](https://docs.github.com/en/codespaces/overview)
 - [Defining dev containers](https://docs.github.com/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/introduction-to-dev-containers)
-- [Code with Codespaces](https://github.com/skills/code-with-codespaces)
+- [GitHub Skills: Code with Codespaces](https://github.com/skills/code-with-codespaces)

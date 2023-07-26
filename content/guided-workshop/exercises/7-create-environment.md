@@ -114,8 +114,6 @@ Let's create variables for the name of the resource group and your prefix:
 
 You've now configured Azure and added secrets & variables to your repository. You're now ready to create the workflow! This workflow will run on-demand, and create the resources on Azure. This will both make it easier to create everything and ensure it's done correctly.
 
-Previously you created a workflow by using the **Actions** tab in your repository. While this works, it's not always ideal as you will often want better support from your editor. Since workflows are defined as [YML](https://en.wikipedia.org/wiki/YAML) files
-
 1. Return to your codespace.
 1. If the **Terminal** window isn't already open, open it by pressing <kbd>Ctl</kbd> - <kbd>`</kbd> on your keyboard.
 1. Switch to the `main` branch, pull any changes currently on the server to your codespace, and create a new branch by entering the following command in the terminal window and pressing <kbd>Enter</kbd> (or <kbd>Return</kbd> on a Mac):
