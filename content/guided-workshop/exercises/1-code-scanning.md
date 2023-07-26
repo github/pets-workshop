@@ -16,17 +16,20 @@ Security is important in every application. By detecting potential vulnerabiliti
 
 ## Dependabot
 
-Most projects take dependencies on open source and other external libraries. While modern development would seemingly be impossible without these resources, we always need to ensure the dependencies we take are secure. [Dependabot](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide) will look at the dependencies your repository has and raise alerts or even create [pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) to update your dependencies to a secure version.
+Most projects take dependencies on open source and other external libraries. While modern development would seemingly be impossible without these resources, we always need to ensure the dependencies we take are secure. [Dependabot](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide) will look at the dependencies your repository has and raise alerts or even create [pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) (PRs) to update your dependencies to a secure version.
 
 ### Configuring Dependabot
 
-Let's enable Dependabot for your repository. We'll setup alerts to be raised for potential insecure libraries and have pull requests automatically created when an insecure version is detected.
+Public repositories on GitHub automatically have Dependabot alerts. This feature will generate alerts whenever an insecure package is detected, and generate an alert. Let's configure Dependabot to create PRs to update a library's version when an insecure one is detected.
 
 1. Navigate to the repository you created for this workshop.
-2. Select the **Security** tab.
-3. Select **Enable Dependabot alerts**.
-4. Next to **Dependabot alerts**, select **Enable**.
-5. Next to **Dependabot security updates**, select **Enable**.
+1. Select the **Settings** tab.
+1. On the left side, select **Code security and analysis**.
+1. Locate the **Dependabot** section towards the middle of the page:
+
+    ![Screenshot of the dependabot section](./images/1-dependabot.png)
+
+1. Select **Enable** next to **Dependabot security updates** to configure Dependabot to create PRs to resolve alerts.
 
 You have now enabled Dependabot alerts and security updates! Should an insecure library be detected, you will both receive an alert, and Dependabot will create a new pull request to update the version number to a secure version of the library.
 
@@ -40,11 +43,11 @@ Regardless of the reason, even seemingly innocuous tokens can create a security 
 
 Let's enable Secret scanning to detect any potential keys.
 
-1. Navigate to the repository you created for this workshop.
-2. Select the **Security** tab.
-3. In the **Secret scanning alerts** section, select **Enable in settings**.
-4. All the way at the bottom, in the **Secret scanning** section, select **Enable**.
-5. Next to **Push protection, select **Enable**.
+1. On the same page (**Settings** > **Code security and analysis**), towards the very bottom, locate the **Secret scanning** section.
+1. Next to **Receive alerts on GitHub for detected secrets, keys or other tokens**, select **Enable**.
+1. Next to **Push protection**, select **Enable** to block pushes to the repository which contain a [supported secret](https://docs.github.com/en/code-security/secret-scanning/secret-scanning-patterns#supported-secrets).
+
+    ![Screenshot of fully configured secret scanning](./images/1-secret-scanning.png)
 
 You've now enabled secret scanning and push protection. This helps you both block keys from being pushed to your repository and quickly detect when a key has been added to your source code.
 
@@ -58,17 +61,20 @@ There is a direct relationship between the amount of code an organization create
 
 Let's enable Code scanning to detect vulnerabilities in our source code.
 
-1. Navigate to the repository you created for this workshop.
-2. Select the **Security** tab.
-3. Select **Setup code scanning**.
-4. Under **Code scanning**, in the **Tools** section, select **Set up** > **Default**.
-5. On the dialog box, select **Enable CodeQL**.
+1. On the same page (**Settings** > **Code security and analysis**), towards the very bottom, locate the **Code scanning** section.
+1. Next to **CodeQL analysis**, select **Set up** > **Default**.
 
-You have now enabled code scanning for your repository!
+    ![Screenshot of code scanning dropdown menu](./images/1-code-scanning.png)
+
+1. On the **CodeQL default configuration** dialog, select **Enable CodeQL**.
+
+    ![Screenshot of code scanning dialog](./images/1-code-scanning.png)
+
+A background process starts, and will configure a workflow for analyzing your code using [CodeQL and code scanning](https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning).
 
 ## Summary and next steps
 
-Throughout the course of these exercises you enabled GitHub Advanced Security. You enabled Dependabot to check the libraries your project takes dependencies on, secret scanning to look for keys and tokens, and code scanning to examine your source code. These tools help ensure your application is secure. Next it's time to [file an issue](2-issues.md) to add feature requests.
+In this exercise, you enabled GitHub Advanced Security. You enabled Dependabot to check the libraries your project takes dependencies on, secret scanning to look for keys and tokens, and code scanning to examine your source code. These tools help ensure your application is secure. Next it's time to [file an issue](2-issues.md) to add feature requests.
 
 ### Additional resources
 
