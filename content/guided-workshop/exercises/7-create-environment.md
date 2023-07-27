@@ -1,14 +1,10 @@
 # Create a deployment environment
 
-When we think about creating a deployment environment, we know this is something which won't be done regularly. You might spin up a new staging environment for testing, or when a new instance of the application is created. As a result, this might not seem like something we would want to automate. Tasks which are run frequently, like unit testing, are obvious candidates for automation. But what about those which are run sporadically?
+Creating the environment where our application will be deployed to is something which likely won't be done regularly. You'll create the environment when you first look to deploy the project, and maybe when it comes time to do some testing. As a result, this might not seem like something we would want to automate. Tasks which are run frequently, like unit testing, are obvious candidates for automation. But what about those which are run sporadically?
 
 As it turns out, it can be argued that those which are run infrequently are just as important to be automated, if not more so. The reason is if a task isn't run regularly it's easier to miss steps or to lose time investigating what needs to be done. It's typically worth the initial investment up front building out an automated process which will payoff in the future by ensuring consistency and ease of use. Specific to creating a deployment environment, ensuring it's created correctly allows for the automated tasks to actually perform the deployment to run successfully.
 
 With GitHub Actions, you can use `workflow_dispatch` as a trigger for [manual execution of workflows](https://docs.github.com/en/actions/using-workflows/manually-running-a-workflow). This is perfect for scenarios like creating a deployment environment.
-
-## Infrastructure as code
-
-[Infrastructure as code (IaC)](https://en.wikipedia.org/wiki/Infrastructure_as_code), also sometimes referred to as config as code, is a mechanism where the infrastructure required for an application is defined in a configuration file. There are numerous languages which support IaC, such as [Terraform](https://www.terraform.io/) and [Bicep](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview?tabs=bicep). By using IaC, the definition is created once and reused multiple times ensuring consistency. Rather than providing a list of instructions for a human to follow, a code file contains all of the necessary settings which is then used by an automated process (like GitHub Actions).
 
 ## Scenario
 
@@ -16,7 +12,11 @@ With the project created, the code supply chain secured, and end-to-end testing 
 
 > **NOTE:** For this exercise, a small amount of Azure credit will be required to store the website's image and the database. For the purposes of this workshop, the total amount should be less than $10US if you keep the website up for an entire month. At the end of the workshop, delete the resource group to ensure all billing stops.
 
-## Exploring the Bicep file
+## Infrastructure as code
+
+[Infrastructure as code (IaC)](https://en.wikipedia.org/wiki/Infrastructure_as_code), also sometimes referred to as config as code, is a mechanism where the infrastructure required for an application is defined in a configuration file. There are numerous languages which support IaC, such as [Terraform](https://www.terraform.io/) and [Bicep](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview?tabs=bicep). By using IaC, the definition is created once and reused multiple times ensuring consistency. Rather than providing a list of instructions for a human to follow, a code file contains all of the necessary settings which is then used by an automated process (like GitHub Actions).
+
+### Exploring the Bicep file
 
 [Bicep](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview?tabs=bicep) is a domain specific language (DSL) created by Microsoft to describe and deploy Azure resources. With a Bicep file you can establish the services required, their configuration, and even set variables. This allows for flexibility and reuse, ensuring the environment is created correctly each time.
 
@@ -42,27 +42,29 @@ With the project created, the code supply chain secured, and end-to-end testing 
 All resources created in Azure are contained in resource groups. As the name implies, this allows you to group resources together. In our situation, this allows for streamlined management and permissions, and to speed cleanup as deleting the resource group will delete all associated resources. Let's create the resource group using the [Azure command-line interface (CLI)](https://learn.microsoft.com/en-us/cli/azure/what-is-azure-cli), and create a security principal with permissions to the resource group. This account will be used in the future to create the resources and deploy the website.
 
 1. Return to your codespace.
-1. Open a terminal window by pressing <kbd>Ctl</kbd> - <kbd>`</kbd>.
-1. Log into Azure via the Azure CLI by entering the following command and pressing <kbd>Enter</kbd> (or <kbd>Return</kbd> on a Mac):
+1. If a terminal window isn't already open, open one by pressing <kbd>Ctl</kbd> - <kbd>`</kbd>.
+1. Log into Azure via the Azure CLI by entering the following command:
 
     ```bash
     az login --use-device-code
     ```
 
 1. Follow the on-screen prompts to complete the authentication process.
-1. Create a resource group named **pets-workshop** by entering the following command and pressing <kbd>Enter</kbd> (or <kbd>Return</kbd> on a Mac):
+1. Create a resource group named **pets-workshop** by entering the following command:
 
     ```bash
     az group create -n pets-workshop -l westus
     ```
 
-1. Obtain your Azure subscription ID (used in the next step) by entering the following command and pressing <kbd>Enter</kbd> (or <kbd>Return</kbd> on a Mac):
+    > **NOTE:** If prompted to allow pasting through your browser, select **Allow**.
+
+1. Obtain your Azure subscription ID (used in the next step) by entering the following command:
 
     ```bash
     az account show --query id -o tsv
     ```
 
-1. Create the service principal to be used to manage the resource group by entering the following command, replacing **<SUBSCRIPTION_ID>** with your subscription ID obtained in the prior step, and pressing <kbd>Enter</kbd> (or <kbd>Return</kbd> on a Mac):
+1. Create the service principal to be used to manage the resource group by entering the following command, replacing **<SUBSCRIPTION_ID>** with your subscription ID obtained in the prior step,:
 
     ```bash
     az ad sp create-for-rbac --name pets-workshop-app --role contributor --scopes /subscriptions/<SUBSCRIPTION_ID>/resourceGroups/pets-workshop --sdk-auth
@@ -72,7 +74,7 @@ All resources created in Azure are contained in resource groups. As the name imp
 
 1. Copy the JSON to a scratchpad such as Notepad or Notes. You will use this object in the next step.
 
-> **IMPORTANT:** In the real world, this should be treated the same as any credential or username and password. It should be properly secured and not shared with anyone.
+> **IMPORTANT:** The credentials provided from this step should be treated the same as any credential or username and password. It should be properly secured and not shared with anyone.
 
 ## Securing secrets in a repository
 
@@ -85,6 +87,9 @@ Let's create the secrets required for our workflow.
 1. In a new browser tab, navigate to your repository.
 1. Select the **Settings** tab.
 1. On the left side, expand **Secrets and variables** and select **Actions**.
+
+    ![Screenshot of Actions secrets and variables control panel](./images/7-actions-secrets-variables.png)
+
 1. Create a new repository secret to store the credentials by selecting **New repository secret**, entering the following values (replacing `<THE JSON FROM THE PRIOR STEP>` with the JSON you created previously), and selecting **Add secret**:
 
     - **Name**: `AZURE_CREDENTIALS`
@@ -95,17 +100,19 @@ Let's create the secrets required for our workflow.
     - **Name**: `AZURE_SUBSCRIPTION`
     - **Secret**: `<SUBSCRIPTION_ID>`
 
+## Creating variables for workflows
+
 Not all values need to be secured. For sensitive information, like credentials or your subscription ID, it's best to store those properly. But other values, like the name of your resource group and the prefix you'll use for the other resources to be created, don't need to be hidden. These are perfect for variables. Variables behave in much the same way as secrets, except they're not encrypted or hidden from repository owners.
 
 Let's create variables for the name of the resource group and your prefix:
 
-1. On the **Actions secrets and variables** screen, select the **Variables** tab.
+1. On the **Actions secrets and variables** screen (the same screen you were on previously), select the **Variables** tab.
 1. Create a variable for the name of the resource group by selecting **New variable**, entering the following values, and selecting **Add variable**:
 
     - **Name**: `AZURE_RG`
     - **Value**: `pets-workshop`
 
-1. Create a variable for the prefix to use for naming other resources by selecting **New variable**, entering the following values, replacing `<PREFIX_NAME>` with five random letters, and selecting **Add variable**:
+1. Create a variable for the prefix to use for naming other resources by selecting **New variable**, entering the following values, replacing `<PREFIX_NAME>` with five random letters (such as **aetel**), and selecting **Add variable**:
 
     - **Name**: `AZURE_PREFIX`
     - **Value**: `<PREFIX_NAME>`
@@ -116,7 +123,7 @@ You've now configured Azure and added secrets & variables to your repository. Yo
 
 1. Return to your codespace.
 1. If the **Terminal** window isn't already open, open it by pressing <kbd>Ctl</kbd> - <kbd>`</kbd> on your keyboard.
-1. Switch to the `main` branch, pull any changes currently on the server to your codespace, and create a new branch by entering the following command in the terminal window and pressing <kbd>Enter</kbd> (or <kbd>Return</kbd> on a Mac):
+1. Switch to the `main` branch, pull any changes currently on the server to your codespace, and create a new branch by entering the following command in the terminal window:
 
     ```bash
     git checkout main
@@ -133,31 +140,31 @@ You've now configured Azure and added secrets & variables to your repository. Yo
     on: [workflow_dispatch]
     jobs:
     build-and-deploy:
-      runs-on: ubuntu-latest
-      steps:
+        runs-on: ubuntu-latest
+        steps:
 
         # Checkout code
         - uses: actions/checkout@main
 
         # Log into Azure
         - uses: azure/login@v1
-          with:
+            with:
             creds: ${{ secrets.AZURE_CREDENTIALS }}
 
         # Deploy Bicep file
         - name: create resources
-          uses: azure/arm-deploy@v1
-          with:
+            uses: azure/arm-deploy@v1
+            with:
             subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-            resourceGroupName: ${{ secrets.AZURE_RG }}
+            resourceGroupName: ${{ vars.AZURE_RG }}
             template: ${{ github.workspace }}/config/main.bicep
-            parameters: 'namePrefix=${{ secrets.AZURE_PREFIX }}'
+            parameters: 'namePrefix=${{ vars.AZURE_PREFIX }}'
             failOnStdErr: false
     ```
 
-    The workflow is set to run on `workflow_dispatch`, which is a manual trigger. The steps checkout the code, log into Azure using the credentials you created and stored previously, then create the resources defined in the **main.bicep** in the resource group you created with the prefix you defined.
+    The workflow is set to run on `workflow_dispatch`, which is a manual trigger. The steps checkout the code, log into Azure using the credentials you created and stored previously, then create the resources defined in the **main.bicep** in the resource group you created with the prefix you defined. Notice how secrets are read by using `${{ secrets.NAME }}` and variables with `${{ variables.NAME }}`.
 
-1. Stage, commit and push all changes to the repository by entering the following command in the terminal window and pressing <kbd>Enter</kbd> (or <kbd>Return</kbd> on a Mac):
+1. Stage, commit and push all changes to the repository by entering the following command in the terminal window:
 
     ```bash
     git add .
@@ -165,23 +172,27 @@ You've now configured Azure and added secrets & variables to your repository. Yo
     git push -u origin add-resource-workflow
     ```
 
-1. Obtain the number for the issue you created for creating deployment environment by entering the following command in the terminal window and pressing <kbd>Enter</kbd> (or <kbd>Return</kbd> on a Mac):
+1. Obtain the number for the issue you created for creating deployment environment by entering the following command in the terminal window:
 
     ```bash
     gh issue list
     ```
 
-1. Create a pull request (PR) for the newly created branch referencing the issue, replacing <ISSUE_NUMBER> with the issue you obtained in the prior step by entering the following command in the terminal window and pressing <kbd>Enter</kbd> (or <kbd>Return</kbd> on a Mac):
+1. Create a pull request (PR) for the newly created branch referencing the issue, replacing <ISSUE_NUMBER> with the issue you obtained in the prior step by entering the following command in the terminal window:
 
     ```bash
     gh pr create -t "Add resource creation workflow" -b "Resolves #<ISSUE_NUMBER>"
     ```
 
-1. Merge the PR you just created by entering the following command, replacing <PR_NUMBER> with the newly generated PR number, in the terminal window and pressing <kbd>Enter</kbd> (or <kbd>Return</kbd> on a Mac):
+1. Merge the PR you just created by entering the following command, replacing <PR_NUMBER> with the newly generated PR number, in the terminal window:
 
     ```bash
     gh pr merge <PR_NUMBER>
     ```
+
+1. When prompted, press <kbd>Enter</kbd> (or <kbd>return</kbd> on a Mac) to create a merge commit.
+1. When prompted, press <kbd>y</kbd> and press <kbd>Enter</kbd> (or <kbd>return</kbd> on a Mac) to delete the branch and return to `main`.
+1. When prompted, press <kbd>Enter</kbd> (or <kbd>return</kbd> on a Mac) to submit the command.
 
     > **IMPORTANT:** Normally you would go through a standard review flow before merging a PR. Because we're working through a set of exercises as part of a workshop we're going to shortcut a couple of steps.
 
@@ -191,23 +202,30 @@ You've prepped everything on both Azure and your repository, and created the wor
 
 1. Navigate to your repository.
 1. Select the **Actions** tab.
-1. On the list of workflows, select **Create Azure resources**.
-1. Select the ellipsis (**...**) next to **Create Azure resources** and select **Run workflow**.
+1. On the list of workflows, select **Create Azure resources** to open the workflow page.
 
-    The workflow will now run and create the resources! This will take several minutes. You can navigate into the workflow run to view the log and track the progress.
+    ![Screenshot of Create Azure resources workflow page](./images/7-actions-azure-resources.png)
+
+1. Run the workflow by selecting the **Run workflow** dropdown box then the **Run workflow** button**.
+
+    The workflow will now run and create the resources! This will take several minutes. You may need to refresh the page to see it start running. Once running, you can navigate into the workflow run to view the log and track the progress.
 
 1. When the workflow completes, return to your codespace.
-1. Obtain the URL for the newly created Azure Container App by entering the following command in the terminal window and pressing <kbd>Enter</kbd> (or <kbd>Return</kbd> on a Mac):
+1. Obtain the URL for the newly created Azure Container App by entering the following command in the terminal window:
 
     ```bash
     az containerapp list --query "[].properties.configuration.ingress.fqdn" -o tsv
     ```
 
-1. Navigate to the site by using <kbd>Ctl</kbd> - **Click** (or <kbd>Cmd</kbd> - **Click** on a Mac) on the URL displayed.
-1. You will be presented with a "Hello, world" page. (Don't worry - you'll deploy your site shortly!)
+1. When prompted to install the extension, press <kbd>Enter</kbd> (or <kbd>return</kbd> on a Mac) to approve the installation.
+1. Note the URL provided; you'll use it in the next exercise when you deploy your website!
 
 ## Summary and next steps
 
 Congratulations! You have new defined a workflow which uses infrastructure as code (IaC) to create the resources necessary for deployment. This allows you to quickly create a consistent environment, reducing overhead and errors. Let's close everything out by [implementing continuous deployment](8-deployment.md).
 
 ## Resources
+
+- [About continuous deployment](https://docs.github.com/en/actions/deployment/about-deployments/about-continuous-deployment)
+- [GitHub Actions Marketplace](https://github.com/marketplace?type=actions)
+- [GitHub Skills: Deploy to Azure](https://github.com/skills/deploy-to-azure)
