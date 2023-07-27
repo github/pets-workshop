@@ -33,6 +33,8 @@ Public repositories on GitHub automatically have Dependabot alerts. This feature
 
 You have now enabled Dependabot alerts and security updates! Should an insecure library be detected, you will both receive an alert, and Dependabot will create a new pull request to update the version number to a secure version of the library.
 
+> **IMPORTANT:** After enabling Dependabot security updates you may notice new [pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) created for potentially outdated packages. For this workshop you can ignore these pull requests.
+
 ## Secret scanning
 
 Many developers have checked in code with a token or username and passwords. Sometimes this is because the developer was trying to take a shortcut, sometimes it was because they didn't know the proper mechanism to secure the key, and sometimes it was done under the assumption they'll clean it up later but never do.
@@ -59,7 +61,7 @@ There is a direct relationship between the amount of code an organization create
 
 ### Enabling code scanning
 
-Let's enable Code scanning to detect vulnerabilities in our source code.
+Let's enable Code scanning to detect vulnerabilities in our source code. We're going to use the default implementation, which runs whenever code is pushed to `main` or a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) is made to `main`. It will also run on a set schedule to ensure any newly discovered potential vulnerabilities are detected.
 
 1. On the same page (**Settings** > **Code security and analysis**), towards the very bottom, locate the **Code scanning** section.
 1. Next to **CodeQL analysis**, select **Set up** > **Default**.
