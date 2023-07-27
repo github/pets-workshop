@@ -25,32 +25,32 @@ In the [prior exercise](./7-create-environment.md) you created the environment o
 1. Define the workflow by pasting the following code into **deploy-to-azure.yml**:
 
     ```yml
-    name: Deploy to Azure
-    on:
-      push:
-        branches:
-          - main
+      name: Deploy to Azure
+      on:
+        push:
+          branches:
+            - main
 
-    jobs:
-      deploy:
-        runs-on: ubuntu-latest
-        steps:
-          - name: Checkout code
-            uses: actions/checkout@v3
+      jobs:
+        deploy:
+          runs-on: ubuntu-latest
+          steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
 
-          - name: Log in to Azure
-            uses: azure/login@v1
+            - name: Log in to Azure
+              uses: azure/login@v1
               with:
                 creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-          - name: Build and deploy Container App
+            - name: Build and deploy Container App
               uses: azure/container-apps-deploy-action@v1
               with:
-                appSourcePath: ${{ github.workspace }}/src
-                acrName: ${{ secrets.AZURE_CONTAINER_REGISTRY }}
-                resourceGroup: ${{ secrets.AZURE_RG }}
-                containerAppName: ${{ secrets.AZURE_CONTAINER_APP }}
-                containerAppEnvironment: ${{ secrets.AZURE_CONTAINER_APP_ENVIRONMENT }}
+                appSourcePath: ${{ github.workspace }}
+                acrName: ${{ vars.AZURE_PREFIX }}acr
+                resourceGroup: ${{ vars.AZURE_RG }}
+                containerAppName: ${{ vars.AZURE_PREFIX }}containerapp
+                containerAppEnvironment: ${{ vars.AZURE_PREFIX }}containerappenvironment
     ```
 
     The workflow is set to run when code is pushed (or merged) into `main`. The deployment action is configured with the information it requires, using the naming defined in the creation workflow and the prefix you configured.
@@ -101,5 +101,7 @@ Because merging the workflow's [YML](https://en.wikipedia.org/wiki/YAML) into `m
 ## Summary and next steps!
 
 Congratulations!! You have now explored the core components to DevOps and how GitHub can support your development lifecycle. You started by creating a repository, then enabled settings to secure your code. You created issues to track your work, created an environment in which to code, and enabled testing for continuous integration. You modified code and explored the GitHub flow. And finally you deployed your application to the cloud. Using these skills, you can continue to build and grow your knowledge of DevOps.
+
+<!-- Add deletion steps!! -->
 
 ## Resources
