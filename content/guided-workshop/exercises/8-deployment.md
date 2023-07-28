@@ -93,15 +93,34 @@ Because merging the workflow's [YML](https://en.wikipedia.org/wiki/YAML) into `m
 
 1. Open your repository and select the **Actions** tab.
 1. Select **Deploy to Azure** to open the information about this workflow.
-1. Select the **Build and deploy Container App** step. Information about the deployment will be logged.
-1. When the workflow completes, all sections will automatically collapse.
-1. Reopen the **Build and deploy Container App** step. Note the URL displayed at the bottom, which will resemble the following: **some-url-here**.
-1. Navigate to the URL. Interact with your newly deployed website!
+1. When the workflow completes, return to your codespace.
+1. Obtain the URL for the newly created Azure Container App by entering the following command in the terminal window:
+
+    ```bash
+    az containerapp list --query "[].properties.configuration.ingress.fqdn" -o tsv
+    ```
+
+1. When prompted to install the extension, press <kbd>Enter</kbd> (or <kbd>return</kbd> on a Mac) to approve the installation.
+1. The URL for the site you created will be displayed. If multiple are displayed, select the one which starts with the prefix you created previously.
+1. Select the URL and copy it to the clipboard.
+1. Open a new tab and enter the URL to navigate to the page.
+1. Your website now displays, running in the cloud!
+
+  ![Screenshot of website showing Adoption shelter and the hours component added in a prior exercise](./images/website-screenshot.png)
 
 ## Summary and next steps!
 
-Congratulations!! You have now explored the core components to DevOps and how GitHub can support your development lifecycle. You started by creating a repository, then enabled settings to secure your code. You created issues to track your work, created an environment in which to code, and enabled testing for continuous integration. You modified code and explored the GitHub flow. And finally you deployed your application to the cloud. Using these skills, you can continue to build and grow your knowledge of DevOps.
+Congratulations!! You have now explored the core components to DevOps and how GitHub can support a common development lifecycle. You started by creating a repository, then enabled settings to secure your code. You created issues to track your work, created an environment in which to code, and enabled testing for continuous integration. You modified code and explored the GitHub flow. And finally you deployed your application to the cloud. Using these skills, you can continue to build and grow your knowledge of DevOps.
 
-<!-- Add deletion steps!! -->
+> **IMPORTANT:**: If you are no longer going to use the resources deployed to Azure, you can delete them by running the following command in the terminal window of your codespace:
+> 
+> `az group delete -n pets-workshop --yes`
+> 
+> The deletion of resources may take several minutes
 
 ## Resources
+
+- [About continuous deployment](https://docs.github.com/en/actions/deployment/about-deployments/about-continuous-deployment)
+- [Deploy to Amazon Elastic Container Service](https://docs.github.com/en/actions/deployment/deploying-to-your-cloud-provider/deploying-to-amazon-elastic-container-service)
+- [Deploy to Google Kubernetes Engine](https://docs.github.com/en/actions/deployment/deploying-to-your-cloud-provider/deploying-to-google-kubernetes-engine)
+- [GitHub Skills: Deploy to Azure](https://github.com/skills/deploy-to-azure)

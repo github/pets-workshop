@@ -95,6 +95,10 @@ Custom containers for GitHub Codespaces become part of the source code for the r
 
 1. Note the issue for defining a codespace is no longer listed; you completed it and marked it as such with your pull request!
 
+## Configuring the codespace to run your website
+
+
+
 ## Summary and next steps
 
 Congratulations! You have now defined a custom development environment including all services and extensions. This eliminates the initial setup hurdle normally required when contributing to a project. Let's use this codespace to explore the code and [implement testing](./4-testing.md) for the project.

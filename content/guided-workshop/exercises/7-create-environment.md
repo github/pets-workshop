@@ -210,16 +210,6 @@ You've prepped everything on both Azure and your repository, and created the wor
 
     The workflow will now run and create the resources! This will take several minutes. You may need to refresh the page to see it start running. Once running, you can navigate into the workflow run to view the log and track the progress.
 
-1. When the workflow completes, return to your codespace.
-1. Obtain the URL for the newly created Azure Container App by entering the following command in the terminal window:
-
-    ```bash
-    az containerapp list --query "[].properties.configuration.ingress.fqdn" -o tsv
-    ```
-
-1. When prompted to install the extension, press <kbd>Enter</kbd> (or <kbd>return</kbd> on a Mac) to approve the installation.
-1. Note the URL provided; you'll use it in the next exercise when you deploy your website!
-
 ## Summary and next steps
 
 Congratulations! You have new defined a workflow which uses infrastructure as code (IaC) to create the resources necessary for deployment. This allows you to quickly create a consistent environment, reducing overhead and errors. Let's close everything out by [implementing continuous deployment](8-deployment.md).
