@@ -84,7 +84,13 @@ Congratulations! You've now used the GitHub flow to suggest changes, perform a r
 
 ## Summary and next steps
 
-The GitHub flow is a workflow for managing changes and incorporating new features into a codebase. GitHub flow gives you the freedom to explore and experiment, while ensuring all code follows a validation process before being merged. With the code updated, it's time to deploy the project! The first step is to [create the deployment environment](./7-create-environment.md).
+The GitHub flow is a workflow for managing changes and incorporating new features into a codebase. GitHub flow gives you the freedom to explore and experiment, while ensuring all code follows a validation process before being merged.
+
+If you wish, this is a perfect wrap-up point! You have explored the beginning steps of DevOps. You created issues, setup a development environment, added code, configured continuous integration, and walked through the GitHub flow.
+
+You can also see how to enable continuous deployment. The first step is to [create the cloud environment](./7-create-environment.md).
+
+> **NOTE:** When deploying to a cloud environment, some charges may be incurred. For this workshop, when deploying to Azure and deleting the resources upon completion of the exercises, the charge should be less than $6 US.
 
 ## Resources
 
