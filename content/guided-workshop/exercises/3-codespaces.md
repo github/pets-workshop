@@ -130,9 +130,7 @@ Let's add an environment variable, refresh the codespace to update the environme
 
     ![Screenshot of open in browser dialog](./images/3-open-browser.png)
 
-1. You will now see a new tab with your website running! Notice the URL at the top, which resembles the name of your codespace. Your website is running in the container you defined in the cloud. You should also notice the component you created displayed as well!
-
-    ![Screenshot of the adoption shelter](./images/website-screenshot.png)
+1. You will now see a new tab with your website running! Notice the URL at the top, which resembles the name of your codespace. Your website is running in the container you defined in the cloud!
 
 1. If you wish, you can add a pet to the database by selecting **Add pet**. On the form you will notice various fields to describe the pet. If you need a URL for images, you can use any of the following:
 
@@ -140,7 +138,11 @@ Let's add an environment variable, refresh the codespace to update the environme
     - https://raw.githubusercontent.com/github/pets-workshop/main/src/pics/sammy.jpg
     - https://raw.githubusercontent.com/github/pets-workshop/main/src/pics/sushi.jpg
 
-Because the database is in the codespace's container, as long as you keep your codespace the database will maintain its state.
+    > **NOTE:** Because the database is in the codespace's container, as long as you keep your codespace the database will maintain its state.
+
+1. Stop the website by returning back to your codespace, ensuring focus is on the terminal window, and selecting <kbd>Ctl</kbd> - <kbd>C</kbd>.
+
+    > **IMPORTANT:** You can ignore any **favicon** errors.
 
 ## Summary and next steps
 

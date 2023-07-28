@@ -188,6 +188,33 @@ Congratulations! You've now created a new component and added the code to the la
 
 > **IMPORTANT:** If you enrolled for a GitHub Copilot trial, billing will start after the first 30 days. If you wish, you can [cancel your GitHub Copilot personal account](https://docs.github.com/en/billing/managing-billing-for-github-copilot/managing-your-github-copilot-subscription-for-your-personal-account#canceling-your-copilot-for-individuals-subscription) if you won't be using it.
 
+## Running your website
+
+With the updates made, you likely want to view the website. Let's start it and see the new component!
+
+1. Return to your codespace. You will be prompted to **Reload to apply** your settings. Select **Reload to apply**.
+
+    ![Screenshot of reload to apply dialog](./images/3-reload.png)
+
+1. After the codespace reloads, run your website in the codespace by entering the following command in the terminal window (using <kbd>Ctl</kbd> - <kbd>`</kbd> to open one as necessary):
+
+    ```bash
+    npm run dev
+    ```
+
+1. After the application starts, you will be presented with a dialog explaining your application is running on port 3000, which is now being forwarded.
+1. Select **Open in Browser** in this dialog to open a new tab with your application.
+
+    ![Screenshot of open in browser dialog](./images/3-open-browser.png)
+
+1. You will now see a new tab with your website running! Your component should now display on the site.
+
+    ![Screenshot of updated website](./images/website-screenshot.png)
+
+1. Stop the website by returning back to your codespace, ensuring focus is on the terminal window, and selecting <kbd>Ctl</kbd> - <kbd>C</kbd>.
+
+    > **IMPORTANT:** You can ignore any **favicon** errors.
+
 ## Summary and next steps
 
 All developers write code with some form of assistance. This might come from a human pair programmer, copying/pasting code from a developer forum or documentation, or, in our case, and AI pair programer - GitHub Copilot. With GitHub Copilot, developers are able to focus on the bigger tasks while GitHub Copilot provides suggestions and generates code.
