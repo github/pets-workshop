@@ -108,6 +108,14 @@ Because merging the workflow's [YML](https://en.wikipedia.org/wiki/YAML) into `m
 
   ![Screenshot of website showing Adoption shelter and the hours component added in a prior exercise](./images/website-screenshot.png)
 
+1. If you wish, you can add a pet to the database by selecting **Add pet**. On the form you will notice various fields to describe the pet. If you need a URL for images, you can use any of the following:
+
+    - https://raw.githubusercontent.com/github/pets-workshop/main/src/pics/roscoe.jpg
+    - https://raw.githubusercontent.com/github/pets-workshop/main/src/pics/sammy.jpg
+    - https://raw.githubusercontent.com/github/pets-workshop/main/src/pics/sushi.jpg
+
+Any pets you register will be stored in the cloud-based database you defined in the prior exercise.
+
 ## Summary and next steps!
 
 Congratulations!! You have now explored the core components to DevOps and how GitHub can support a common development lifecycle. You started by creating a repository, then enabled settings to secure your code. You created issues to track your work, created an environment in which to code, and enabled testing for continuous integration. You modified code and explored the GitHub flow. And finally you deployed your application to the cloud. Using these skills, you can continue to build and grow your knowledge of DevOps.
