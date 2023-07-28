@@ -97,7 +97,50 @@ Custom containers for GitHub Codespaces become part of the source code for the r
 
 ## Configuring the codespace to run your website
 
+When building an application you will typically want to actually run the website as part of the development and testing process. Fortunately, GitHub Codespaces supports [port forwarding](https://docs.github.com/en/codespaces/developing-in-codespaces/forwarding-ports-in-your-codespace), meaning your application can run in the cloud-hosted container while you can access it from your local system. By default these ports are restricted to you via authentication, but you can also [share a port](https://docs.github.com/en/codespaces/developing-in-codespaces/forwarding-ports-in-your-codespace#sharing-a-port-1) publicly or (when using GitHub Enterprise) with your team.
 
+Because the application we're building uses a backend MongoDB database, we need to configure a connection string. If you open **src** > **lib** > **mongoUri.js**, you'll notice on line 3 this is read from an environment variable named `MONGODB_URI`. When using GitHub Codespaces you can set environment variables by adding [encrypted secrets](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-encrypted-secrets-for-your-codespaces). When using a codespace, these secrets will be accessible via environment variables.
+
+Let's add an environment variable, refresh the codespace to update the environment settings, then run the website.
+
+1. Open your repository in a browser tab (or return to one which is already open).
+1. Select the **Settings** tab.
+1. On the left, under the **Security** section, expand **Secrets and variables** and select **Codespaces**.
+
+    ![Screenshot of the Secrets and variables section](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-encrypted-secrets-for-your-codespaces)
+
+1. Select **New repository secret**.
+1. Create a new secret by entering the following values and pressing **Add secret**.
+
+    - **Name**: `MONGODB_URI`
+    - **Secret**: `mongodb://localhost/pets`
+
+1. Return to your codespace. You will be prompted to **Reload to apply** your settings. Select **Reload to apply**.
+
+    ![Screenshot of reload to apply dialog](./images/3-reload.png)
+
+1. After the codespace reloads, run your website in the codespace by entering the following command in the terminal window (using <kbd>Ctl</kbd> - <kbd>`</kbd> to open one as necessary):
+
+    ```bash
+    npm run dev
+    ```
+
+1. After the application starts, you will be presented with a dialog explaining your application is running on port 3000, which is now being forwarded.
+1. Select **Open in Browser** in this dialog to open a new tab with your application.
+
+    ![Screenshot of open in browser dialog](./images/3-open-browser.png)
+
+1. You will now see a new tab with your website running! Notice the URL at the top, which resembles the name of your codespace. Your website is running in the container you defined in the cloud. You should also notice the component you created displayed as well!
+
+    ![Screenshot of the adoption shelter](./images/website-screenshot.png)
+
+1. If you wish, you can add a pet to the database by selecting **Add pet**. On the form you will notice various fields to describe the pet. If you need a URL for images, you can use any of the following:
+
+    - https://raw.githubusercontent.com/github/pets-workshop/main/src/pics/roscoe.jpg
+    - https://raw.githubusercontent.com/github/pets-workshop/main/src/pics/sammy.jpg
+    - https://raw.githubusercontent.com/github/pets-workshop/main/src/pics/sushi.jpg
+
+Because the database is in the codespace's container, as long as you keep your codespace the database will maintain its state.
 
 ## Summary and next steps
 
