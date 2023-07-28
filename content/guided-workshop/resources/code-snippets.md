@@ -22,8 +22,9 @@ jobs:
         with:
           build: npm run build
           start: npm run start
+          project: ./src
         env:
-          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          MONGODB_URI: test
 ```
 
 ## Custom action
