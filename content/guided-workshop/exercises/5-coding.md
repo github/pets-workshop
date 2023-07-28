@@ -186,6 +186,8 @@ Let's finish out our coding by displaying the `Hours` component on **index.js**,
 
 Congratulations! You've now created a new component and added the code to the landing page to display it.
 
+> **IMPORTANT:** If you enrolled for a GitHub Copilot trial, billing will start after the first 30 days. If you wish, you can [cancel your GitHub Copilot personal account](https://docs.github.com/en/billing/managing-billing-for-github-copilot/managing-your-github-copilot-subscription-for-your-personal-account#canceling-your-copilot-for-individuals-subscription) if you won't be using it.
+
 ## Summary and next steps
 
 All developers write code with some form of assistance. This might come from a human pair programmer, copying/pasting code from a developer forum or documentation, or, in our case, and AI pair programer - GitHub Copilot. With GitHub Copilot, developers are able to focus on the bigger tasks while GitHub Copilot provides suggestions and generates code.
