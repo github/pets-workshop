@@ -54,7 +54,7 @@ Validation is part of the PR lifecycle, and is managed by the status checks defi
 
 Once a feature is deployed, your team will use various tools to monitor your applications to detected problems. You can use [GitHub's APIs](https://docs.github.com/rest) to create issues should problems arise. Additionally, GitHub Actions can run in response to webhooks, allowing you to flag bugs or identify failed deployments.
 
-## Lessons form the Open Source community
+## Lessons from the Open Source community
 
 Most Open Source Software (OSS) OSS projects are maintained by a set of contributors with various backgrounds and skill-levels, and are geographically distributed. Many contributions come from people who view OSS as a side project. The practices developed by the OSS community to support contributors can be applied to internal development as well. This process is typically referred to as InnerSource.
 
