@@ -1,6 +1,6 @@
 # Exploring modern DevOps
 
-This repository is built as a resource to begin exploring GitHub and [DevOps](https://en.wikipedia.org/wiki/DevOps). Working through either a [guided workshop](./guided-workshop/) or a [challenge-based approach](./what-the-hack/Student/), you will learn the core concepts of DevOps and features available on GitHub to support you.
+This repository iasdfs built as a resource to begin exploring GitHub and [DevOps](https://en.wikipedia.org/wiki/DevOps). Working through either a [guided workshop](./guided-workshop/) or a [challenge-based approach](./what-the-hack/Student/), you will learn the core concepts of DevOps and features available on GitHub to support you.
 
 The workshop is centered around an application (included in this repository) written using [Next.js](https://nextjs.org/) with a [MongoDB](https://www.mongodb.com/) backend, and the beginnings of end-to-end testing with [Cypress](https://www.cypress.io/). You can use this repository as a template for creating your own projects, or walk through the available workshop and resources.
 
