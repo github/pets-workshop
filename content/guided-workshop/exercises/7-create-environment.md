@@ -139,27 +139,27 @@ You've now configured Azure and added secrets & variables to your repository. Yo
     name: Create Azure resources
     on: [workflow_dispatch]
     jobs:
-    build-and-deploy:
+      build-and-deploy:
         runs-on: ubuntu-latest
         steps:
-
-        # Checkout code
-        - uses: actions/checkout@main
-
-        # Log into Azure
-        - uses: azure/login@v1
+    
+          # Checkout code
+          - uses: actions/checkout@main
+    
+          # Log into Azure
+          - uses: azure/login@v1
             with:
-            creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-        # Deploy Bicep file
-        - name: create resources
+              creds: ${{ secrets.AZURE_CREDENTIALS }}
+    
+          # Deploy Bicep file
+          - name: create resources
             uses: azure/arm-deploy@v1
             with:
-            subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-            resourceGroupName: ${{ vars.AZURE_RG }}
-            template: ${{ github.workspace }}/config/main.bicep
-            parameters: 'namePrefix=${{ vars.AZURE_PREFIX }}'
-            failOnStdErr: false
+              subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+              resourceGroupName: ${{ vars.AZURE_RG }}
+              template: ${{ github.workspace }}/config/main.bicep
+              parameters: 'namePrefix=${{ vars.AZURE_PREFIX }}'
+              failOnStdErr: false
     ```
 
     The workflow is set to run on `workflow_dispatch`, which is a manual trigger. The steps checkout the code, log into Azure using the credentials you created and stored previously, then create the resources defined in the **main.bicep** in the resource group you created with the prefix you defined. Notice how secrets are read by using `${{ secrets.NAME }}` and variables with `${{ variables.NAME }}`.
