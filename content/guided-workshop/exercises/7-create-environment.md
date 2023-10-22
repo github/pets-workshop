@@ -142,15 +142,15 @@ You've now configured Azure and added secrets & variables to your repository. Yo
       build-and-deploy:
         runs-on: ubuntu-latest
         steps:
-    
+
           # Checkout code
           - uses: actions/checkout@main
-    
+
           # Log into Azure
           - uses: azure/login@v1
             with:
               creds: ${{ secrets.AZURE_CREDENTIALS }}
-    
+
           # Deploy Bicep file
           - name: create resources
             uses: azure/arm-deploy@v1
@@ -209,6 +209,79 @@ You've prepped everything on both Azure and your repository, and created the wor
 1. Run the workflow by selecting the **Run workflow** dropdown box then the **Run workflow** button**.
 
     The workflow will now run and create the resources! This will take several minutes. You may need to refresh the page to see it start running. Once running, you can navigate into the workflow run to view the log and track the progress.
+
+## Debugging the workflow
+
+If you see error messages such as:
+
+```
+Code: MissingSubscriptionRegistration
+Message: The subscription is not registered to use namespace {resource-provider-namespace}
+```
+
+For example:
+
+```
+Error: ERROR: ***"status":"Failed",
+"error":***"code":"DeploymentFailed",
+"target":"/subscriptions/***/resourceGroups/pets-workshop/providers/Microsoft.Resources/deployments/main",
+"message":"At least one resource deployment operation failed.
+Please list deployment operations for details.
+Please see https://aka.ms/arm-deployment-operations for usage details.",
+"details":[***"code":"MissingSubscriptionRegistration",
+"message":"The subscription is not registered to use namespace 'Microsoft.ContainerRegistry'.
+See https://aka.ms/rps-not-found for how to register subscriptions.",
+"details":[***"code":"MissingSubscriptionRegistration",
+"target":"Microsoft.ContainerRegistry",
+"message":"The subscription is not registered to use namespace 'Microsoft.ContainerRegistry'.
+See https://aka.ms/rps-not-found for how to register subscriptions."***]***,
+***"code":"MissingSubscriptionRegistration",
+"message":"The subscription is not registered to use namespace 'Microsoft.DocumentDB'.
+See https://aka.ms/rps-not-found for how to register subscriptions.",
+"details":[***"code":"MissingSubscriptionRegistration",
+"target":"Microsoft.DocumentDB",
+"message":"The subscription is not registered to use namespace 'Microsoft.DocumentDB'.
+See https://aka.ms/rps-not-found for how to register subscriptions."***]***,
+***"code":"MissingSubscriptionRegistration",
+"message":"The subscription is not registered to use namespace 'Microsoft.OperationalInsights'.
+See https://aka.ms/rps-not-found for how to register subscriptions.",
+"details":[***"code":"MissingSubscriptionRegistration",
+"target":"Microsoft.OperationalInsights",
+"message":"The subscription is not registered to use namespace 'Microsoft.OperationalInsights'.
+See https://aka.ms/rps-not-found for how to register subscriptions."***]***]***
+```
+
+and
+
+```
+Error: ERROR:
+***"status":"Failed",
+"error":***"code":"DeploymentFailed",
+"target":"/subscriptions/***/resourceGroups/pets-workshop/providers/Microsoft.Resources/deployments/main",
+"message":"At least one resource deployment operation failed.
+Please list deployment operations for details.
+Please see https://aka.ms/arm-deployment-operations for usage details.",
+"details":[***"code":"MissingSubscriptionRegistration",
+"message":"The subscription is not registered to use namespace 'Microsoft.App'.
+See https://aka.ms/rps-not-found for how to register subscriptions.",
+"details":[***"code":"MissingSubscriptionRegistration",
+"target":"Microsoft.App",
+"message":"The subscription is not registered to use namespace 'Microsoft.App'.
+See https://aka.ms/rps-not-found for how to register subscriptions."***]***]***
+```
+
+You need to register resources via the Azure Portal first.
+
+Specifically, you need to register:
+* Microsoft.App
+* Microsoft.ContainerRegistry
+* Microsoft.DocumentDB
+* Microsoft.OperationalInsights
+
+Follow the instructions at
+
+https://learn.microsoft.com/en-us/azure/azure-resource-manager/troubleshooting/error-register-resource-provider?tabs=azure-portal#solution
+
 
 ## Summary and next steps
 
