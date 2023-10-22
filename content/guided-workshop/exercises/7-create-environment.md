@@ -142,15 +142,15 @@ You've now configured Azure and added secrets & variables to your repository. Yo
       build-and-deploy:
         runs-on: ubuntu-latest
         steps:
-
+    
           # Checkout code
           - uses: actions/checkout@main
-
+    
           # Log into Azure
           - uses: azure/login@v1
             with:
               creds: ${{ secrets.AZURE_CREDENTIALS }}
-
+    
           # Deploy Bicep file
           - name: create resources
             uses: azure/arm-deploy@v1
@@ -281,7 +281,6 @@ Specifically, you need to register:
 Follow the instructions at
 
 https://learn.microsoft.com/en-us/azure/azure-resource-manager/troubleshooting/error-register-resource-provider?tabs=azure-portal#solution
-
 
 ## Summary and next steps
 
