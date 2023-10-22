@@ -224,50 +224,41 @@ For example:
 ```
 Error: ERROR: ***"status":"Failed",
 "error":***"code":"DeploymentFailed",
+```
+
+```
 "target":"/subscriptions/***/resourceGroups/pets-workshop/providers/Microsoft.Resources/deployments/main",
 "message":"At least one resource deployment operation failed.
 Please list deployment operations for details.
 Please see https://aka.ms/arm-deployment-operations for usage details.",
-"details":[***"code":"MissingSubscriptionRegistration",
-"message":"The subscription is not registered to use namespace 'Microsoft.ContainerRegistry'.
-See https://aka.ms/rps-not-found for how to register subscriptions.",
-"details":[***"code":"MissingSubscriptionRegistration",
-"target":"Microsoft.ContainerRegistry",
-"message":"The subscription is not registered to use namespace 'Microsoft.ContainerRegistry'.
-See https://aka.ms/rps-not-found for how to register subscriptions."***]***,
-***"code":"MissingSubscriptionRegistration",
-"message":"The subscription is not registered to use namespace 'Microsoft.DocumentDB'.
-See https://aka.ms/rps-not-found for how to register subscriptions.",
-"details":[***"code":"MissingSubscriptionRegistration",
-"target":"Microsoft.DocumentDB",
-"message":"The subscription is not registered to use namespace 'Microsoft.DocumentDB'.
-See https://aka.ms/rps-not-found for how to register subscriptions."***]***,
-***"code":"MissingSubscriptionRegistration",
-"message":"The subscription is not registered to use namespace 'Microsoft.OperationalInsights'.
-See https://aka.ms/rps-not-found for how to register subscriptions.",
-"details":[***"code":"MissingSubscriptionRegistration",
-"target":"Microsoft.OperationalInsights",
-"message":"The subscription is not registered to use namespace 'Microsoft.OperationalInsights'.
-See https://aka.ms/rps-not-found for how to register subscriptions."***]***]***
 ```
 
-and
-
 ```
-Error: ERROR:
-***"status":"Failed",
-"error":***"code":"DeploymentFailed",
-"target":"/subscriptions/***/resourceGroups/pets-workshop/providers/Microsoft.Resources/deployments/main",
-"message":"At least one resource deployment operation failed.
-Please list deployment operations for details.
-Please see https://aka.ms/arm-deployment-operations for usage details.",
-"details":[***"code":"MissingSubscriptionRegistration",
-"message":"The subscription is not registered to use namespace 'Microsoft.App'.
-See https://aka.ms/rps-not-found for how to register subscriptions.",
 "details":[***"code":"MissingSubscriptionRegistration",
 "target":"Microsoft.App",
 "message":"The subscription is not registered to use namespace 'Microsoft.App'.
-See https://aka.ms/rps-not-found for how to register subscriptions."***]***]***
+See https://aka.ms/rps-not-found for how to register subscriptions."***]
+```
+
+```
+"details":[***"code":"MissingSubscriptionRegistration",
+"target":"Microsoft.ContainerRegistry",
+"message":"The subscription is not registered to use namespace 'Microsoft.ContainerRegistry'.
+See https://aka.ms/rps-not-found for how to register subscriptions."***]
+```
+
+```
+"details":[***"code":"MissingSubscriptionRegistration",
+"target":"Microsoft.DocumentDB",
+"message":"The subscription is not registered to use namespace 'Microsoft.DocumentDB'.
+See https://aka.ms/rps-not-found for how to register subscriptions."***]
+```
+
+```
+"details":[***"code":"MissingSubscriptionRegistration",
+"target":"Microsoft.OperationalInsights",
+"message":"The subscription is not registered to use namespace 'Microsoft.OperationalInsights'.
+See https://aka.ms/rps-not-found for how to register subscriptions."***]
 ```
 
 You need to register resources via the Azure Portal first.
