@@ -4,7 +4,7 @@ This repository contains the project for both a guided workshop and the Modern D
 
 ## Getting started
 
-> **[Get started learning about development and DevOps with GitHub!](./content/README.md)**
+> **[Get started learning about development and DevOps with GitHub!](pets-workshop/blob/main/content/README.md)**
 
 ## License 
 
