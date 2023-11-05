@@ -107,7 +107,7 @@ Let's add an environment variable, refresh the codespace to update the environme
 1. Select the **Settings** tab.
 1. On the left, under the **Security** section, expand **Secrets and variables** and select **Codespaces**.
 
-    ![Screenshot of the Secrets and variables section](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-encrypted-secrets-for-your-codespaces)
+    ![Screenshot of the Secrets and variables section](./images/3-secrets-variables.png)
 
 1. Select **New repository secret**.
 1. Create a new secret by entering the following values and pressing **Add secret**.
