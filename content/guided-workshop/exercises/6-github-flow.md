@@ -80,6 +80,8 @@ Let's explore the pull request and watch the workflows run. We'll ensure the tes
 1. In the page displayed, note the workflow running the [end-to-end tests created earlier](./4-testing.md) and [code scanning](../exercises/1-code-scanning.md).
 1. When the workflows complete successfully, select **Merge pull request** to merge your changes into the **main** branch.
 
+> **NOTE:** If the end-to-end test fails, click the "details" link and explore the output... most likely the Hours component is not providing the exact text the test is looking for. Adjust the component as needed, then `git add .` and `git commit -m "Fixed hours component"`. Return to the pull request page and watch the tests automatically re-run.
+
 Congratulations! You've now used the GitHub flow to suggest changes, perform a review, and merge those into your codebase.
 
 ## Summary and next steps
