@@ -20,7 +20,7 @@ One thing that's really great is the [default dev container](https://github.com/
 
 Let's create our own dev container! The [dev container is configured](https://docs.github.com/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/introduction-to-dev-containers) by creating the Docker files Codespaces will use to create and configure the container, and providing any customizations in the `devcontainer.json` file. Customizations provided in `devcontainer.json` can include ports to open, commands to run, and extension to install in Visual Studio Code (either running locally on the desktop or in the browser). This configuration becomes part of the repository. All developers who wish to contribute can then create a new instance of the container based on the configuration you provided.
 
-1. Access the Command Palette (<kbd>F1</kbd>), then start typing **dev container**.
+1. Access the Command Palette (<kbd>F1</kbd> or ☰ → View → Command Palette), then start typing **dev container**.
 1. Select **Codespaces: Add Development Container Configuration Files...** .
 1. Select **Create a new configuration...**.
 1. Select **From a predefined container configuration...**.
