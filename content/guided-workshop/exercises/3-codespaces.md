@@ -132,6 +132,8 @@ Let's add an environment variable, refresh the codespace to update the environme
 
 1. You will now see a new tab with your website running! Notice the URL at the top, which resembles the name of your codespace. Your website is running in the container you defined in the cloud!
 
+    > **NOTE:** If you close this tab, you can reopen it by clicking the "Ports" tab next to the Terminal, mousing over the "Forwarded Address" starting with `https://`, then clicking the globe icon 
+
 1. If you wish, you can add a pet to the database by selecting **Add pet**. On the form you will notice various fields to describe the pet. If you need a URL for images, you can use any of the following:
 
     - https://raw.githubusercontent.com/github/pets-workshop/main/src/pics/roscoe.jpg
