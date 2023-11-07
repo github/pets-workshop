@@ -81,7 +81,7 @@ Custom containers for GitHub Codespaces become part of the source code for the r
 
     ```bash
     git add .
-    git commit -m "Resolves <ISSUE_NUMBER>"
+    git commit -m "Resolves #<ISSUE_NUMBER>"
     git push
     ```
 
