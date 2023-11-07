@@ -20,7 +20,7 @@ One thing that's really great is the [default dev container](https://github.com/
 
 Let's create our own dev container! The [dev container is configured](https://docs.github.com/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/introduction-to-dev-containers) by creating the Docker files Codespaces will use to create and configure the container, and providing any customizations in the `devcontainer.json` file. Customizations provided in `devcontainer.json` can include ports to open, commands to run, and extension to install in Visual Studio Code (either running locally on the desktop or in the browser). This configuration becomes part of the repository. All developers who wish to contribute can then create a new instance of the container based on the configuration you provided.
 
-1. Access the Command Palette (<kbd>F1</kbd>), then start typing **dev container**.
+1. Access the Command Palette (<kbd>F1</kbd> or clicking ☰ → View → Command Palette), then start typing **dev container**.
 1. Select **Codespaces: Add Development Container Configuration Files...** .
 1. Select **Create a new configuration...**.
 1. Select **From a predefined container configuration...**.
@@ -56,7 +56,7 @@ You've now defined a custom container!
 
 Whenever someone uses the codespace you defined they'll have an environment with Node.js and Mongo DB, and the GitHub Copilot extension installed. Let's use this container!
 
-1. Select <kbd>F1</kbd> to open the command palette.
+1. Open the command palette.
 1. Type **rebuild** and select **Codespaces: Rebuild container**.
 1. Select **Rebuild Container** on the dialog box. Your container now rebuilds.
 
@@ -68,7 +68,7 @@ Custom containers for GitHub Codespaces become part of the source code for the r
 
 > **IMPORTANT:** For purposes of this exercise we are pushing code updates directly to `main`, our default branch. Normally you would follow the [GitHub flow](https://docs.github.com/en/get-started/quickstart/github-flow), which we will do in a [later exercise](6-github-flow.md).
 
-1. Open the terminal window in the codespace by selecting <kbd>Ctl</kbd> + <kbd>`</kbd>.
+1. Open the terminal window in the codespace by selecting <kbd>Ctl</kbd> + <kbd>`</kbd> or clicking ☰ → View → Terminal.
 1. Find the issue number for defining the codespace by entering the following command:
 
     ```bash
