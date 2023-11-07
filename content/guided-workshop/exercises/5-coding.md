@@ -149,7 +149,7 @@ Let's see how GitHub Copilot can help us quickly create the component. We're goi
 1. Finally, ask GitHub Copilot to display today's hours:
 
     ```javascript
-    // display today and the hours in an div with an id of hours
+    // display a header of "Today's Hours", and the name of today and hours (in a paragraph), inside an div with an id of "hours"
     ```
 
 1. GitHub Copilot will likely suggest the following code line-by-line, which you can accept by pressing <kbd>Tab</kbd>:
