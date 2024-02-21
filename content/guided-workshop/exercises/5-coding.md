@@ -217,7 +217,7 @@ With the updates made, you likely want to view the website. Let's start it and s
 
 ## Bonus – Using GitHub Copilot Chat
 
-> This section is entirely optional and intended to help you learn more about GitHub Copilot Chat. If this is not of interest, please feel free to progress to the next exercise.
+> **NOTE:** This section is entirely optional and intended to help you learn more about GitHub Copilot Chat. If this is not of interest, please feel free to progress to the next exercise.
 
 In this exercise, we have used GitHub Copilot's Code Completion capabilities to help us stay in the flow and resolve the immediate problem we're trying to solve. Sometimes, we may require a little more assistance from our pair programmer. This is where Copilot Chat can help. Copilot Chat can help us easily document our code, fix issues and help us in our understanding.
 
