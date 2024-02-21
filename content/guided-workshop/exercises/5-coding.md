@@ -221,7 +221,7 @@ With the updates made, you likely want to view the website. Let's start it and s
 
 In this exercise, we have used GitHub Copilot's Code Completion capabilities to help us stay in the flow and resolve the immediate problem we're trying to solve. Sometimes, we may want an interactive conversation, where we can explore various paths and provide additional context. This is where Copilot Chat can help. Copilot Chat can help us document our code, fix issues and help us in our understanding.
 
-There are several ways to interact with Copilot Chat, including the **chat view** and **inline chat**. We'll explore both options.
+There are several ways to interact with Copilot Chat in Visual Studio Code, including the **chat view** and **inline chat**. We'll explore both options.
 
 1. Open the existing **Hours.js** file.
 
