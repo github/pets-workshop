@@ -225,7 +225,7 @@ There are several ways to interact with Copilot Chat in Visual Studio Code, incl
 
 1. Open the existing **Hours.js** file.
 
-1. Access the **inline chat view** by pressing <kbd>⌘ (CMD)</kbd> - <kbd>i</kbd> on MacOS, or <bd>ctl</kbd> - <kbd>i</kbd> on Windows or Linux.
+1. Access the **inline chat view** by pressing <kbd>⌘ (CMD)</kbd> - <kbd>i</kbd> on MacOS, or <kbd>ctl</kbd> - <kbd>i</kbd> on Windows or Linux.
 
 1. When using Copilot Chat, you can use [slash commands](https://github.blog/changelog/2024-01-30-code-faster-and-better-with-github-copilots-new-features-in-visual-studio/#slash-commands), such as */fix*, */doc*, */explain* and more. Type **/doc**, to ask Copilot to improve the **Hours.js** file with some additional documentation. You should find that Copilot adds comments which resemble the JSDoc format:
 
@@ -247,7 +247,7 @@ There are several ways to interact with Copilot Chat in Visual Studio Code, incl
 
 1. Remove **.toLocaleDateString**.
 
-1. Select the line that you just changed, and access the **inline chat view** by pressing <kbd>⌘ (CMD)</kbd> - <kbd>i</kbd> on MacOS, or <bd>ctl</kbd> - <kbd>i</kbd> on Windows or Linux. Type **/fix** and submit the request by pressing <kbd>enter</kbd>. Notice that the inline chat suggests the original line? Go ahead and accept the suggestion.
+1. Select the line that you just changed, and access the **inline chat view** by pressing <kbd>⌘ (CMD)</kbd> - <kbd>i</kbd> on MacOS, or <kbd>ctl</kbd> - <kbd>i</kbd> on Windows or Linux. Type **/fix** and submit the request by pressing <kbd>enter</kbd>. Notice that the inline chat suggests the original line? Go ahead and accept the suggestion.
 
     ```javascript
     const today = new Date().toLocaleDateString("en-US", { weekday: "long" });
