@@ -215,6 +215,58 @@ With the updates made, you likely want to view the website. Let's start it and s
 
     > **IMPORTANT:** You can ignore any **favicon** errors.
 
+## Bonus – Using GitHub Copilot Chat
+
+> **NOTE:** This section is entirely optional and intended to help you learn more about GitHub Copilot Chat. If this is not of interest, please feel free to progress to the next exercise.
+
+In this exercise, we have used GitHub Copilot's Code Completion capabilities to help us stay in the flow and resolve the immediate problem we're trying to solve. Sometimes, we may want an interactive conversation, where we can explore various paths and provide additional context. This is where Copilot Chat can help. Copilot Chat can help us document our code, fix issues and help us in our understanding.
+
+There are several ways to interact with Copilot Chat in Visual Studio Code, including the **chat view** and **inline chat**. We'll explore both options.
+
+1. Open the existing **Hours.js** file.
+
+1. Access the **inline chat view** by pressing <kbd>⌘ (CMD)</kbd> - <kbd>i</kbd> on MacOS, or <kbd>ctl</kbd> - <kbd>i</kbd> on Windows or Linux.
+
+1. When using Copilot Chat, you can use [slash commands](https://github.blog/changelog/2024-01-30-code-faster-and-better-with-github-copilots-new-features-in-visual-studio/#slash-commands), such as */fix*, */doc*, */explain* and more. Type **/doc**, to ask Copilot to improve the **Hours.js** file with some additional documentation. You should find that Copilot adds comments which resemble the JSDoc format:
+
+    ```javascript
+    /**
+    * Renders the component that displays the shelter's hours for the current day.
+    *
+    * @returns {JSX.Element} The rendered component.
+    */
+    ```
+
+1. The code in the inline chat view is not added to your file until you hit Accept. Once you have reviewed the documentation and you're comfortable, go ahead and click **Accept** to add the suggested changes – enjoy the improved documentation of your code! 
+
+1. Let's try another slash command. Navigate to the the line where the **today** variable is defined. It should look similar to the below.
+
+    ```javascript
+    const today = new Date().toLocaleDateString("en-US", { weekday: "long" });
+    ```
+
+1. Remove **.toLocaleDateString**.
+
+1. Select the line that you just changed, and access the **inline chat view** by pressing <kbd>⌘ (CMD)</kbd> - <kbd>i</kbd> on MacOS, or <kbd>ctl</kbd> - <kbd>i</kbd> on Windows or Linux. Type **/fix** and submit the request by pressing <kbd>enter</kbd>. Notice that the inline chat suggests the original line? Go ahead and accept the suggestion.
+
+    ```javascript
+    const today = new Date().toLocaleDateString("en-US", { weekday: "long" });
+    ```
+
+1. Let's put Copilot Chat to the test once again. Navigate to the line which defines **todaysHours**. Rename the variable to **openingHours**, but keep all other references to todaysHours the same.
+
+1. Try to run the website again by running **npm run dev** in the terminal. After navigating to your site, you should see a runtime error similar to below.
+
+    ```
+     ⨯ ReferenceError: todaysHours is not defined
+    ```
+
+1. Select the error in the terminal. Now, access Copilot Chat using the **chat view** by clicking the icon in your side bar that resembles a chat icon. In the input box type **/fix #terminalSelection** and submit the message. Copilot should point out that there is a typo in your code, and that you have defined openingHours as the variable but used todaysHours elsewhere (while also providing you with a suggested code snippet to address the issue).
+
+1. In addition to slash commands, you can use natural language to interact with Copilot Chat. Consider asking a question like **What does this code do?** or **How could I improve this code?**.
+
+Feel free to continue asking questions and refactoring the code as you wish to explore. But before progressing, make sure that the code passes your required tests!
+
 ## Summary and next steps
 
 All developers write code with some form of assistance. This might come from a human pair programmer, copying/pasting code from a developer forum or documentation, or, in our case, and AI pair programer - GitHub Copilot. With GitHub Copilot, developers are able to focus on the bigger tasks while GitHub Copilot provides suggestions and generates code.
