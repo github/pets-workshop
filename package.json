@@ -8,8 +8,8 @@
     "test": "start-server-and-test start http://localhost:3000 cypress:headless"
   },
   "dependencies": {
-    "mongodb": "^4.8.1",
-    "mongoose": "^6.6.0",
+    "mongodb": "^6.7.0",
+    "mongoose": "^8.4.3",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
