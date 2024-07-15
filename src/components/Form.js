@@ -22,8 +22,12 @@ const Form = ({ formId, petForm, forNewPet = true }) => {
 
   /* The PUT method edits an existing entry in the mongodb database. */
   const putData = async (form) => {
-    const { id } = router.query
+    const id = parseInt(router.query.id, 10);
 
+    if(!id || isNaN(id) || id < 1) {
+      setMessage('Pet ID is not a number');
+      return;
+    }
     try {
       const res = await fetch(`/api/pets/${id}`, {
         method: 'PUT',

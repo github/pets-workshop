@@ -9,7 +9,12 @@ const PetPage = ({ pet }) => {
   const router = useRouter()
   const [message, setMessage] = useState('')
   const handleDelete = async () => {
-    const petID = router.query.id
+    const petID = parseInt(router.query.id, 10);
+
+    if(!petID || isNaN(petID) || petID < 1) {
+      setMessage('Pet ID is not a number');
+      return;
+    }
 
     try {
       await fetch(`/api/pets/${petID}`, {
